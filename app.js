@@ -17,10 +17,11 @@ var app = express();
 var twilio = require('twilio');
 // Twilio Credentials
 var config = JSON.parse(process.env.VCAP_SERVICES);
+var accountSid, authToken;
 config['user-provided'].forEach(function(service){
    if (service.name == 'Twilio-77') {
-     var accountSid = service.credentials.accountSID;
-     var authToken = service.credentials.authToken;
+     accountSid = service.credentials.accountSID;
+     authToken = service.credentials.authToken;
    }
 }); 
 //var accountSid = 'ACbcebf97809d3a98688129a6fa7407a45'; 
