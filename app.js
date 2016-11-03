@@ -18,7 +18,7 @@ var twilio = require('twilio');
 // Twilio Credentials
 var config = JSON.parse(process.env.VCAP_SERVICES);
 config['user-provided'].forEach(function(service){
-   if (service.name == 'Twilio') {
+   if (service.name == 'Twilio-77') {
      var accountSid = service.credentials.accountSID;
      var authToken = service.credentials.authToken;
    }
